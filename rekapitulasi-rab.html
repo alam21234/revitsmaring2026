@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekapitulasi Rencana Anggaran Biaya (RAB) Perubahan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+            padding: 30px 40px;
+            background: #fff;
+            color: #000;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        .info-section table {
+            width: 100%;
+            border: none;
+        }
+
+        .info-section td {
+            border: none;
+            padding: 2px 5px;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 200px;
+            font-weight: bold;
+        }
+
+        .rab-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        .rab-table th,
+        .rab-table td {
+            border: 1px solid #000;
+            padding: 5px 8px;
+            vertical-align: top;
+        }
+
+        .rab-table thead th {
+            background-color: #c0c0c0;
+            text-align: center;
+            font-weight: bold;
+            padding: 8px 5px;
+        }
+
+        .rab-table thead th.col-no {
+            width: 8%;
+        }
+
+        .rab-table thead th.col-desc {
+            width: 62%;
+        }
+
+        .rab-table thead th.col-harga {
+            width: 30%;
+        }
+
+        .rab-table td.text-right {
+            text-align: right;
+        }
+
+        .rab-table td.text-center {
+            text-align: center;
+        }
+
+        .rab-table td.bold {
+            font-weight: bold;
+        }
+
+        .rab-table td.section-title {
+            font-weight: bold;
+        }
+
+        .rab-table td.sub-item {
+            padding-left: 15px;
+        }
+
+        .rab-table td.total-row {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .rab-table tr.total-section {
+            background-color: #f0f0f0;
+        }
+
+        .rab-table tr.grand-total {
+            background-color: #e8e8e8;
+        }
+
+        .rab-table tr.grand-total td {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .signatures-section {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .signature-block {
+            text-align: center;
+            width: 30%;
+        }
+
+        .signature-block .title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .signature-block .role {
+            margin-bottom: 60px;
+        }
+
+        .signature-block .name {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .signature-block .nip {
+            margin-top: 3px;
+        }
+
+        .date-location {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+
+            .rab-table tr:hover {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Main Title -->
+    <div class="main-title">REKAPITULASI RENCANA ANGGARAN BIAYA (RAB) PERUBAHAN</div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <table>
+            <tr>
+                <td class="info-label">NAMA KEGIATAN</td>
+                <td>: PROGRAM REVITALISASI SMA TAHUN 2026</td>
+            </tr>
+            <tr>
+                <td class="info-label">NAMA SEKOLAH</td>
+                <td>: SMAN 1 CLURING</td>
+            </tr>
+            <tr>
+                <td class="info-label">LOKASI</td>
+                <td>: KECAMATAN CLURING</td>
+            </tr>
+            <tr>
+                <td class="info-label">KABUPATEN/KOTA</td>
+                <td>: BANYUWANGI</td>
+            </tr>
+            <tr>
+                <td class="info-label">TAHUN ANGGARAN</td>
+                <td>: 2026</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- RAB Table -->
+    <table class="rab-table">
+        <thead>
+            <tr>
+                <th class="col-no">NO</th>
+                <th class="col-desc">JENIS PEKERJAAN</th>
+                <th class="col-harga">TOTAL HARGA<br>(Rp.)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Section I: PERSIAPAN -->
+            <tr>
+                <td class="bold text-center">I.</td>
+                <td class="section-title">PERSIAPAN</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.1 &nbsp; Pembersihan Area Pekerjaan</td>
+                <td class="text-right">2.000.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.2 &nbsp; Papan Nama Proyek</td>
+                <td class="text-right">350.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.3 &nbsp; Prasasti Marmer</td>
+                <td class="text-right">2.000.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.4 &nbsp; Perlengkapan APD dan pelalatan K3</td>
+                <td class="text-right">1.152.975,60</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.5 &nbsp; Pembongkaran rangka atap existing</td>
+                <td class="text-right">10.000.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.6 &nbsp; Pembongkaran / penurunan genteng eksisting</td>
+                <td class="text-right">8.000.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.7 &nbsp; Pembongkaran plafond existing</td>
+                <td class="text-right">3.000.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.8 &nbsp; Pengangkutan hasil bongkaran keluar lokasi pekerjaan</td>
+                <td class="text-right">3.000.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">1.9 &nbsp; Mobilisasi Peralatan dan Bahan</td>
+                <td class="text-right">1.000.000,00</td>
+            </tr>
+            <tr class="total-section">
+                <td></td>
+                <td class="total-row">TOTAL BIAYA I.</td>
+                <td class="total-row">30.502.975,60</td>
+            </tr>
+
+            <!-- Section II: PEKERJAAN ARSITEKTUR -->
+            <tr>
+                <td class="bold text-center">II.</td>
+                <td class="section-title">PEKERJAAN ARSITEKTUR</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">II.1 &nbsp; Pekerjaan Beton Non Struktur</td>
+                <td class="text-right">7.545.133,88</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">II.2 &nbsp; Pekerjaan Pasangan Kusen Pintu</td>
+                <td class="text-right">30.545.265,06</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">II.3 &nbsp; Pekerjaan Rangka dan Penutup Plafon</td>
+                <td class="text-right">124.206.805,77</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">II.4 &nbsp; Pekerjaan Konstruksi dan Penutup Atap</td>
+                <td class="text-right">296.523.232,76</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">II.5 &nbsp; Pekerjaan Pengecatan</td>
+                <td class="text-right">54.927.447,77</td>
+            </tr>
+            <tr class="total-section">
+                <td></td>
+                <td class="total-row">TOTAL BIAYA II.</td>
+                <td class="total-row">513.747.885,24</td>
+            </tr>
+
+            <!-- Section III: PEKERJAAN INSTALASI KELISTRIKAN DAN DATA -->
+            <tr>
+                <td class="bold text-center">III.</td>
+                <td class="section-title">PEKERJAAN INSTALASI KELISTRIKAN DAN DATA</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">III.1 &nbsp; Pekerjaan Instalasi Listrik</td>
+                <td class="text-right">16.490.139,66</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">III.2 &nbsp; Pekerjaan Instalasi dan Armatur Lampu</td>
+                <td class="text-right">6.596.999,50</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">III.3 &nbsp; Pekerjaan Multimedia, CCTV dan Data</td>
+                <td class="text-right">6.900.000,00</td>
+            </tr>
+            <tr class="total-section">
+                <td></td>
+                <td class="total-row">TOTAL BIAYA 3</td>
+                <td class="total-row">29.987.139,16</td>
+            </tr>
+
+            <!-- Section IV: BIAYA MANAGEMEN -->
+            <tr>
+                <td class="bold text-center">IV.</td>
+                <td class="section-title">BIAYA MANAGEMEN</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">I &nbsp;&nbsp;&nbsp;&nbsp; PERENCANAAN</td>
+                <td class="text-right">11.542.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">II &nbsp;&nbsp;&nbsp; PENGAWASAN</td>
+                <td class="text-right">13.494.000,00</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item">III &nbsp;&nbsp; PENGELOLAAN</td>
+                <td class="text-right">14.183.000,00</td>
+            </tr>
+            <tr class="total-section">
+                <td></td>
+                <td class="total-row">TOTAL BIAYA 4</td>
+                <td class="total-row">39.219.000,00</td>
+            </tr>
+
+            <!-- Grand Total -->
+            <tr class="grand-total">
+                <td colspan="2" class="total-row">JUMLAH TOTAL BIAYA REVITALISASI</td>
+                <td class="total-row">613.457.000,00</td>
+            </tr>
+            <tr class="grand-total">
+                <td colspan="2" class="total-row">PEMBULATAN</td>
+                <td class="total-row">613.457.000,00</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Signatures Section -->
+    <div style="margin-top: 50px;">
+        <div class="date-location">
+            Banyuwangi, 07 September 2026
+        </div>
+
+        <div class="signatures-section">
+            <!-- Signature 1: Tim P2SP -->
+            <div class="signature-block">
+                <div class="title">Disusun Oleh,</div>
+                <div class="role">Tim P2SP</div>
+                <div style="height: 80px;"></div>
+                <div class="name">Ali Muthohar, S.Pd</div>
+                <div class="nip">NIP. 196903212007011014</div>
+            </div>
+
+            <!-- Signature 2: Perencana -->
+            <div class="signature-block">
+                <div class="title">Disusun Oleh,</div>
+                <div class="role">Perencana</div>
+                <div style="height: 80px;"></div>
+                <div class="name">Rully Helmi Setiyono, S.T.</div>
+                <div class="nip"></div>
+            </div>
+
+            <!-- Signature 3: Kepala Sekolah -->
+            <div class="signature-block">
+                <div class="title">Mengetahui,</div>
+                <div class="role">Kepala Sekolah<br>SMAN NEGERI 1 CLURING</div>
+                <div style="height: 80px;"></div>
+                <div class="name">Helmi, S.Pd, M.Si</div>
+                <div class="nip">NIP. 197506261003122011</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

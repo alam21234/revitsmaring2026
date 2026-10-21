@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rencana Anggaran Biaya - Instalasi Kelistrikan dan Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12px;
+            padding: 20px 30px;
+            background: #fff;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 8px;
+            border: 1px solid #000;
+            margin-bottom: 0;
+        }
+
+        .info-section {
+            border: 1px solid #000;
+            border-top: none;
+            padding: 12px 20px;
+            margin-bottom: 0;
+        }
+
+        .info-section table {
+            width: 100%;
+            border: none;
+        }
+
+        .info-section td {
+            border: none;
+            padding: 2px 5px;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 180px;
+            font-weight: bold;
+        }
+
+        .rab-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        .rab-table th,
+        .rab-table td {
+            border: 1px solid #000;
+            padding: 4px 6px;
+            vertical-align: top;
+        }
+
+        .rab-table thead th {
+            background-color: #c0c0c0;
+            text-align: center;
+            font-weight: bold;
+            padding: 6px 5px;
+            font-size: 12px;
+        }
+
+        .rab-table thead th.col-no { width: 5%; }
+        .rab-table thead th.col-desc { width: 42%; }
+        .rab-table thead th.col-vol { width: 8%; }
+        .rab-table thead th.col-sat { width: 7%; }
+        .rab-table thead th.col-harga { width: 19%; }
+        .rab-table thead th.col-jumlah { width: 19%; }
+
+        .rab-table .sub-header th {
+            background-color: #c0c0c0;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px 5px;
+            font-size: 12px;
+        }
+
+        .rab-table td.text-right { text-align: right; }
+        .rab-table td.text-center { text-align: center; }
+        .rab-table td.bold { font-weight: bold; }
+
+        .rab-table td.section-title {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+
+        .rab-table td.sub-item { padding-left: 10px; }
+
+        .rab-table td.total-row {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .rab-table tr.sub-total-row {
+            background-color: #f5f5f5;
+        }
+
+        .rab-table tr.sub-total-row td {
+            font-weight: bold;
+        }
+
+        .rab-table tr.grand-total-row {
+            background-color: #e8e8e8;
+        }
+
+        .rab-table tr.grand-total-row td {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .desc-main { font-weight: bold; }
+        .desc-sub { font-style: italic; }
+
+        /* ===== INKONSISTENSI - TANDA MERAH ===== */
+        .inkonsistensi {
+            color: #cc0000 !important;
+            font-weight: bold;
+            background-color: #fff0f0;
+            position: relative;
+        }
+
+        .inkonsistensi::after {
+            content: " ⚠";
+            color: #cc0000;
+            font-size: 10px;
+        }
+
+        .inkonsistensi-harga {
+            color: #cc0000 !important;
+            font-weight: bold;
+            background-color: #fff0f0;
+        }
+
+        .inkonsistensi-harga::after {
+            content: " ⚠";
+            color: #cc0000;
+            font-size: 10px;
+        }
+
+        .note-box {
+            margin-top: 15px;
+            padding: 10px 15px;
+            border: 2px solid #cc0000;
+            border-radius: 5px;
+            background-color: #fff5f5;
+            font-size: 12px;
+        }
+
+        .note-box h4 {
+            color: #cc0000;
+            margin-bottom: 5px;
+        }
+
+        .note-box ul {
+            margin-left: 20px;
+        }
+
+        .note-box li {
+            margin-bottom: 3px;
+        }
+
+        .rab-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        @media print {
+            body {
+                padding: 10px 15px;
+                font-size: 10px;
+            }
+            .rab-table tr:hover {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Main Title -->
+    <div class="main-title">RENCANA ANGGARAN BIAYA</div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <table>
+            <tr>
+                <td class="info-label">NAMA KEGIATAN</td>
+                <td>: PROGRAM REVITALISASI SMA TAHUN 2026</td>
+            </tr>
+            <tr>
+                <td class="info-label">NAMA SEKOLAH</td>
+                <td>: SMAN 1 CLURING</td>
+            </tr>
+            <tr>
+                <td class="info-label">KABUPATEN/KOTA</td>
+                <td>: BANYUWANGI</td>
+            </tr>
+            <tr>
+                <td class="info-label">TAHUN ANGGARAN</td>
+                <td>: 2026</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- RAB Table -->
+    <table class="rab-table">
+        <thead>
+            <tr>
+                <th class="col-no">NO.</th>
+                <th class="col-desc">URAIAN PEKERJAAN*</th>
+                <th class="col-vol">VOLUME</th>
+                <th class="col-sat">SATUAN</th>
+                <th class="col-harga">HARGA SATUAN<br>(Rp)</th>
+                <th class="col-jumlah">JUMLAH HARGA<br>(Rp)</th>
+            </tr>
+            <tr class="sub-header">
+                <th>a</th>
+                <th>b</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Section III: PEKERJAAN INSTALASI KELISTRIKAN DAN DATA -->
+            <tr>
+                <td class="bold text-center">III.</td>
+                <td class="section-title" colspan="5">PEKERJAAN INSTALASI KELISTRIKAN DAN DATA</td>
+            </tr>
+
+            <!-- III.1 Pekerjaan Instalasi Listrik -->
+            <tr>
+                <td class="bold text-center">III.1</td>
+                <td class="desc-main" colspan="5">Pekerjaan Instalasi Listrik</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item desc-sub" colspan="5">
+                    Instalasi penerangan, daya, stop kontak, saklar menggunakan kabel<br>
+                    Kabel NYM 2 x 1 x 2,5 mm2 c/w conduit Ø 20 mm, setiap pencabangan ke<br>
+                    armature melalui junction box dan diletakkan dalam fleksibel konduit.
+                </td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Instalasi Titik Lampu Kabel NYM 2x1,5 mm c/w pipa conduit Ø20 mm<br>Komplit Juction Box & Perlengkapannya.</td>
+                <td class="text-right">40,000</td>
+                <td class="text-center">Titik</td>
+                <td class="text-right">366.447,55</td>
+                <!-- INKONSISTENSI: 40.000 × 366.447,55 = 14.657.902,00 (bukan 14.657.901,92) -->
+                <td class="text-right inkonsistensi-harga" title="Inkonsistensi: 40.000 × 366.447,55 = 14.657.902,00 (selisih 0,08)">14.657.901,92</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item">Instalasi Stop Kontak Kabel NYM 3x2,5 mm2 c/w pipa conduit Ø20 mm<br>Komplit Juction Box & Perlengkapannya</td>
+                <td class="text-right">5,000</td>
+                <td class="text-center">Titik</td>
+                <td class="text-right">366.447,55</td>
+                <!-- INKONSISTENSI: 5.000 × 366.447,55 = 1.832.237,75 (bukan 1.832.237,74) -->
+                <td class="text-right inkonsistensi-harga" title="Inkonsistensi: 5.000 × 366.447,55 = 1.832.237,75 (selisih 0,01)">1.832.237,74</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah III.1</td>
+                <td class="total-row">16.490.139,66</td>
+            </tr>
+
+            <!-- III.2 Pekerjaan Instalasi dan Armatur Lampu -->
+            <tr>
+                <td class="bold text-center">III.2</td>
+                <td class="desc-main" colspan="5">Pekerjaan Instalasi dan Armatur Lampu</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Lampu Downlight Inbow 20 Watt</td>
+                <td class="text-right">40,000</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">161.625,20</td>
+                <td class="text-right">6.465.008,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item">Stop Kontak</td>
+                <td class="text-right">5,000</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">26.398,30</td>
+                <td class="text-right">131.991,50</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah III.2</td>
+                <td class="total-row">6.596.999,50</td>
+            </tr>
+
+            <!-- III.3 Pekerjaan Multimedia, CCTV dan Data -->
+            <tr>
+                <td class="bold text-center">III.3</td>
+                <td class="desc-main" colspan="5">Pekerjaan Multimedia, CCTV dan Data</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Pasang Kembali Router dan Jaringan Wifi</td>
+                <td class="text-right">1,000</td>
+                <td class="text-center">ls</td>
+                <td class="text-right">5.000.000,00</td>
+                <td class="text-right">5.000.000,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item">Pasang Kembali CCTV</td>
+                <td class="text-right">1,000</td>
+                <td class="text-center">ls</td>
+                <td class="text-right">1.000.000,00</td>
+                <td class="text-right">1.000.000,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td class="sub-item">Pasang Kembali Proyektor</td>
+                <td class="text-right">5,000</td>
+                <td class="text-center">Set</td>
+                <td class="text-right">180.000,00</td>
+                <td class="text-right">900.000,00</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah III.3</td>
+                <td class="total-row">6.900.000,00</td>
+            </tr>
+
+            <!-- Grand Total -->
+            <tr class="grand-total-row">
+                <td colspan="5" class="total-row">Jumlah Pekerjaan Kelistrikan</td>
+                <td class="total-row">29.987.139,16</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Catatan Inkonsistensi -->
+    <div class="note-box">
+        <h4>⚠ Catatan Inkonsistensi Perhitungan Rupiah</h4>
+        <ul>
+            <li>
+                <strong>Item III.1.1</strong> — Instalasi Titik Lampu:
+                Volume <strong>40.000</strong> × Harga Satuan <strong>Rp 366.447,55</strong> = <strong>Rp 14.657.902,00</strong>
+                (Dokumen menunjukkan <span class="inkonsistensi">Rp 14.657.901,92</span> — selisih <strong>Rp 0,08</strong>)
+            </li>
+            <li>
+                <strong>Item III.1.2</strong> — Instalasi Stop Kontak:
+                Volume <strong>5.000</strong> × Harga Satuan <strong>Rp 366.447,55</strong> = <strong>Rp 1.832.237,75</strong>
+                (Dokumen menunjukkan <span class="inkonsistensi">Rp 1.832.237,74</span> — selisih <strong>Rp 0,01</strong>)
+            </li>
+        </ul>
+        <p style="margin-top: 8px; font-size: 11px; color: #666;">
+            <em>Catatan: Selisih sangat kecil kemungkinan disebabkan oleh pembulatan harga satuan yang memiliki lebih dari 2 desimal di belakang koma (misal: Rp 366.447,548). Total Sub Jumlah III.1 dan Jumlah Pekerjaan Kelistrikan tetap konsisten.</em>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rencana Anggaran Biaya - Pekerjaan Arsitektur</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 12px;
+            padding: 20px 30px;
+            background: #fff;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+            padding: 8px;
+            border: 1px solid #000;
+            margin-bottom: 0;
+        }
+
+        .info-section {
+            border: 1px solid #000;
+            border-top: none;
+            padding: 12px 20px;
+            margin-bottom: 0;
+        }
+
+        .info-section table {
+            width: 100%;
+            border: none;
+        }
+
+        .info-section td {
+            border: none;
+            padding: 2px 5px;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 180px;
+            font-weight: bold;
+        }
+
+        .rab-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        .rab-table th,
+        .rab-table td {
+            border: 1px solid #000;
+            padding: 4px 6px;
+            vertical-align: top;
+        }
+
+        .rab-table thead th {
+            background-color: #c0c0c0;
+            text-align: center;
+            font-weight: bold;
+            padding: 6px 5px;
+            font-size: 12px;
+        }
+
+        .rab-table thead th.col-no {
+            width: 5%;
+        }
+
+        .rab-table thead th.col-desc {
+            width: 42%;
+        }
+
+        .rab-table thead th.col-vol {
+            width: 8%;
+        }
+
+        .rab-table thead th.col-sat {
+            width: 7%;
+        }
+
+        .rab-table thead th.col-harga {
+            width: 19%;
+        }
+
+        .rab-table thead th.col-jumlah {
+            width: 19%;
+        }
+
+        .rab-table .sub-header th {
+            background-color: #c0c0c0;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px 5px;
+            font-size: 12px;
+        }
+
+        .rab-table td.text-right {
+            text-align: right;
+        }
+
+        .rab-table td.text-center {
+            text-align: center;
+        }
+
+        .rab-table td.bold {
+            font-weight: bold;
+        }
+
+        .rab-table td.section-title {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+
+        .rab-table td.sub-item {
+            padding-left: 10px;
+        }
+
+        .rab-table td.sub-sub-item {
+            padding-left: 25px;
+            font-style: italic;
+        }
+
+        .rab-table td.total-row {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .rab-table tr.sub-total-row {
+            background-color: #f5f5f5;
+        }
+
+        .rab-table tr.sub-total-row td {
+            font-weight: bold;
+        }
+
+        .rab-table tr.grand-total-row {
+            background-color: #e8e8e8;
+        }
+
+        .rab-table tr.grand-total-row td {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .desc-main {
+            font-weight: bold;
+        }
+
+        .desc-sub {
+            font-style: italic;
+        }
+
+        .rab-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        @media print {
+            body {
+                padding: 10px 15px;
+                font-size: 10px;
+            }
+
+            .rab-table tr:hover {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Main Title -->
+    <div class="main-title">RENCANA ANGGARAN BIAYA</div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <table>
+            <tr>
+                <td class="info-label">NAMA KEGIATAN</td>
+                <td>: PROGRAM REVITALISASI SMA TAHUN 2026</td>
+            </tr>
+            <tr>
+                <td class="info-label">NAMA SEKOLAH</td>
+                <td>: SMAN 1 CLURING</td>
+            </tr>
+            <tr>
+                <td class="info-label">KABUPATEN/KOTA</td>
+                <td>: BANYUWANGI</td>
+            </tr>
+            <tr>
+                <td class="info-label">TAHUN ANGGARAN</td>
+                <td>: 2026</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- RAB Table -->
+    <table class="rab-table">
+        <thead>
+            <tr>
+                <th class="col-no">NO.</th>
+                <th class="col-desc">URAIAN PEKERJAAN*</th>
+                <th class="col-vol">VOLUME</th>
+                <th class="col-sat">SATUAN</th>
+                <th class="col-harga">HARGA SATUAN<br>(Rp)</th>
+                <th class="col-jumlah">JUMLAH HARGA<br>(Rp)</th>
+            </tr>
+            <tr class="sub-header">
+                <th>a</th>
+                <th>b</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Section II: PEKERJAAN ARSITEKTUR -->
+            <tr>
+                <td class="bold text-center">II.</td>
+                <td class="section-title" colspan="5">PEKERJAAN ARSITEKTUR</td>
+            </tr>
+
+            <!-- II.1 Pekerjaan Beton Non Struktur -->
+            <tr>
+                <td class="bold text-center">II.1</td>
+                <td class="desc-main" colspan="5">Pekerjaan Beton Non Struktur</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Ring Balok Praktis 15/20</td>
+                <td class="text-right">54,00</td>
+                <td class="text-center">M¹</td>
+                <td class="text-right">139.724,70</td>
+                <td class="text-right">7.545.133,88</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah II.1</td>
+                <td class="total-row">7.545.133,88</td>
+            </tr>
+
+            <!-- II.2 Pekerjaan Pasangan Kusen Pintu -->
+            <tr>
+                <td class="bold text-center">II.2</td>
+                <td class="desc-main" colspan="5">Pekerjaan Pasangan Kusen Pintu</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item desc-sub">Daun Pintu Double / Kuputarang, 5 unit</td>
+                <td class="text-right">13,07</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">1.713.953,65</td>
+                <td class="text-right">22.392.804,44</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item desc-sub">Engsel Pintu</td>
+                <td class="text-right">30,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">72.150,00</td>
+                <td class="text-right">2.164.500,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td class="sub-item desc-sub">Grendel Tanam</td>
+                <td class="text-right">5,00</td>
+                <td class="text-center">set</td>
+                <td class="text-right">194.250,00</td>
+                <td class="text-right">971.250,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">4</td>
+                <td class="sub-item desc-sub">Handle Pintu + kunci</td>
+                <td class="text-right">5,00</td>
+                <td class="text-center">set</td>
+                <td class="text-right">610.500,00</td>
+                <td class="text-right">3.052.500,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">5</td>
+                <td class="sub-item desc-sub">Pengecatan daun pintu</td>
+                <td class="text-right">26,13</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">75.170,71</td>
+                <td class="text-right">1.964.210,63</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah II.2</td>
+                <td class="total-row">30.545.265,06</td>
+            </tr>
+
+            <!-- II.3 Pekerjaan Rangka dan Penutup Plafon -->
+            <tr>
+                <td class="bold text-center">II.3</td>
+                <td class="desc-main" colspan="5">Pekerjaan Rangka dan Penutup Plafon</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Pemasangan 1 m² Rangka Hollow Galvalume 40.40 mm, Modul 60 x 60 cm, untuk Langit-langit (Plafon)</td>
+                <td class="text-right">553,90</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">141.361,50</td>
+                <td class="text-right">78.300.134,85</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item">Pemasangan 1 m² Langit-langit (Plafon) Papan Gypsum, Tebal 9 mm</td>
+                <td class="text-right">343,20</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">63.672,42</td>
+                <td class="text-right">21.852.375,64</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td class="sub-item">Pemasangan 1 m² Langit-langit (Plafon) Serat Semen, Tebal 4 mm</td>
+                <td class="text-right">218,95</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">44.877,35</td>
+                <td class="text-right">9.825.896,11</td>
+            </tr>
+            <tr>
+                <td class="text-center">4</td>
+                <td class="sub-item">Pemasangan 1 m¹ List Langit-langit (Plafon) Gypsum</td>
+                <td class="text-right">166,00</td>
+                <td class="text-center">M¹</td>
+                <td class="text-right">28.920,63</td>
+                <td class="text-right">4.800.824,58</td>
+            </tr>
+            <tr>
+                <td class="text-center">5</td>
+                <td class="sub-item">Pemasangan 1 m¹ List Langit-langit (Plafon) Kayu Profil</td>
+                <td class="text-right">274,50</td>
+                <td class="text-center">M¹</td>
+                <td class="text-right">34.344,53</td>
+                <td class="text-right">9.427.574,58</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah II.3</td>
+                <td class="total-row">124.206.805,77</td>
+            </tr>
+
+            <!-- II.4 Pekerjaan Konstruksi dan Penutup Atap -->
+            <tr>
+                <td class="bold text-center">II.4</td>
+                <td class="desc-main" colspan="5">Pekerjaan Konstruksi dan Penutup Atap</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Pas Rangka Atap Baja Ringan ( C80.0,75 + Reng V30.0,45 )</td>
+                <td class="text-right">633,98</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">300.308,77</td>
+                <td class="text-right">190.388.774,39</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item">Pek. Konstruksi Rangka Atap Kayu</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Perakitan dan Pemasangan Kembali Kuda-kuda Konsol Kayu Type 1</td>
+                <td class="text-right">18,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">185.303,84</td>
+                <td class="text-right">3.335.469,20</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Baut Mur Panjang 15 cm + ring</td>
+                <td class="text-right">50,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">17.760,00</td>
+                <td class="text-right">888.000,00</td>
+            </tr>
+            <tr>
+                <td class="text-center">4</td>
+                <td class="sub-item">Pemasangan 1 m2 Atap Genteng Karangpilang Baru</td>
+                <td class="text-right">675,70</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">122.444,25</td>
+                <td class="text-right">82.735.579,73</td>
+            </tr>
+            <tr>
+                <td class="text-center">5</td>
+                <td class="sub-item">Pemasangan 1 m¹ Nok/Bubung Genteng Karangpilang</td>
+                <td class="text-right">46,60</td>
+                <td class="text-center">M¹</td>
+                <td class="text-right">152.809,72</td>
+                <td class="text-right">7.120.932,91</td>
+            </tr>
+            <tr>
+                <td class="text-center">6</td>
+                <td class="sub-item">Pemasangan 1 m¹ Lisplank Non kayu (GRC, Serat Semen) Lebar 30 cm</td>
+                <td class="text-right">122,44</td>
+                <td class="text-center">M¹</td>
+                <td class="text-right">98.450,88</td>
+                <td class="text-right">12.054.476,53</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah II.4</td>
+                <td class="total-row">296.523.232,76</td>
+            </tr>
+
+            <!-- II.5 Pekerjaan Pengecatan -->
+            <tr>
+                <td class="bold text-center">II.5</td>
+                <td class="desc-main" colspan="5">Pekerjaan Pengecatan</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Pengecatan Dinding Eksterior</td>
+                <td class="text-right">72,05</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">55.880,56</td>
+                <td class="text-right">4.026.138,18</td>
+            </tr>
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item">Pengecatan Dinding Interior</td>
+                <td class="text-right">383,45</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">48.442,00</td>
+                <td class="text-right">18.575.037,22</td>
+            </tr>
+            <tr>
+                <td class="text-center">3</td>
+                <td class="sub-item">Pengecatan Plafond</td>
+                <td class="text-right">562,15</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">48.442,00</td>
+                <td class="text-right">27.231.671,42</td>
+            </tr>
+            <tr>
+                <td class="text-center">4</td>
+                <td class="sub-item">Pengecatan Kayu</td>
+                <td class="text-right">143,89</td>
+                <td class="text-center">M²</td>
+                <td class="text-right">35.407,45</td>
+                <td class="text-right">5.094.600,94</td>
+            </tr>
+            <tr class="sub-total-row">
+                <td colspan="5" class="total-row">Sub Jumlah II.5</td>
+                <td class="total-row">54.927.447,77</td>
+            </tr>
+
+            <!-- Grand Total -->
+            <tr class="grand-total-row">
+                <td colspan="5" class="total-row">Jumlah Pekerjaan Arsitektur</td>
+                <td class="total-row">513.747.885,24</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

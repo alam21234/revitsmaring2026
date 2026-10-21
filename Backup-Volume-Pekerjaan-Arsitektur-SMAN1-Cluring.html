@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Volume Pekerjaan Arsitektur - SMAN 1 Cluring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11px;
+            padding: 20px 30px;
+            background: #fff;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .info-section {
+            margin-bottom: 15px;
+        }
+
+        .info-section table {
+            width: 100%;
+            border: none;
+        }
+
+        .info-section td {
+            border: none;
+            padding: 2px 5px;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 180px;
+            font-weight: bold;
+        }
+
+        .rab-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        .rab-table th,
+        .rab-table td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+            vertical-align: middle;
+        }
+
+        .rab-table thead th {
+            background-color: #d0d8f0;
+            text-align: center;
+            font-weight: bold;
+            padding: 6px 5px;
+            font-size: 12px;
+        }
+
+        .rab-table thead th.col-no { width: 5%; }
+        .rab-table thead th.col-desc { width: 30%; }
+        .rab-table thead th.col-calc { width: 50%; }
+        .rab-table thead th.col-vol { width: 15%; }
+
+        .rab-table td.text-right { text-align: right; }
+        .rab-table td.text-center { text-align: center; }
+        .rab-table td.bold { font-weight: bold; }
+
+        .rab-table td.section-title {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+
+        .rab-table td.sub-item { padding-left: 10px; }
+        .rab-table td.sub-sub-item { padding-left: 25px; font-style: italic; }
+
+        .rab-table td.total-row {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .rab-table tr.section-header td {
+            background-color: #f5f5f5;
+            font-weight: bold;
+        }
+
+        .calc-cell {
+            text-align: center;
+        }
+
+        .calc-cell .calc-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 2px 0;
+        }
+
+        .calc-cell .calc-label {
+            width: 80px;
+            text-align: left;
+        }
+
+        .calc-cell .calc-equals {
+            width: 20px;
+            text-align: center;
+        }
+
+        .calc-cell .calc-value {
+            width: 80px;
+            text-align: right;
+        }
+
+        .calc-cell .calc-operator {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* ===== INKONSISTENSI - TANDA MERAH ===== */
+        .inkonsistensi {
+            color: #cc0000 !important;
+            font-weight: bold;
+            background-color: #fff0f0 !important;
+            position: relative;
+        }
+
+        .inkonsistensi::after {
+            content: " ⚠";
+            color: #cc0000;
+            font-size: 10px;
+        }
+
+        .inkonsistensi-kode {
+            color: #cc0000 !important;
+            font-weight: bold;
+            background-color: #fff0f0 !important;
+        }
+
+        .inkonsistensi-kode::after {
+            content: " ";
+            color: #cc0000;
+            font-size: 10px;
+        }
+
+        .note-box {
+            margin-top: 15px;
+            padding: 12px 15px;
+            border: 2px solid #cc0000;
+            border-radius: 5px;
+            background-color: #fff5f5;
+            font-size: 12px;
+        }
+
+        .note-box h4 {
+            color: #cc0000;
+            margin-bottom: 8px;
+        }
+
+        .note-box ul {
+            margin-left: 20px;
+        }
+
+        .note-box li {
+            margin-bottom: 5px;
+        }
+
+        .note-box .highlight {
+            color: #cc0000;
+            font-weight: bold;
+        }
+
+        .rab-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .empty-row td {
+            height: 20px;
+        }
+
+        @media print {
+            body {
+                padding: 10px 15px;
+                font-size: 10px;
+            }
+            .rab-table tr:hover {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Main Title -->
+    <div class="main-title">BACKUP VOLUME</div>
+    <div class="sub-title">PEKERJAAN ARSITEKTUR<br>SMAN 1 CLURING</div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <table>
+            <tr>
+                <td class="info-label">NAMA KEGIATAN</td>
+                <td>: PROGRAM REVITALISASI SMA TAHUN 2026</td>
+            </tr>
+            <tr>
+                <td class="info-label">NAMA SEKOLAH</td>
+                <td>: SMAN 1 CLURING</td>
+            </tr>
+            <tr>
+                <td class="info-label">KABUPATEN/KOTA</td>
+                <td>: BANYUWANGI</td>
+            </tr>
+            <tr>
+                <td class="info-label">TAHUN ANGGARAN</td>
+                <td>: 2026</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Backup Volume Table -->
+    <table class="rab-table">
+        <thead>
+            <tr>
+                <th class="col-no">NO.</th>
+                <th class="col-desc">PEKERJAAN</th>
+                <th class="col-calc">PERHITUNGAN</th>
+                <th class="col-vol">VOLUME</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Section II: PEKERJAAN ARSITEKTUR -->
+            <tr class="section-header">
+                <td class="bold text-center">II.</td>
+                <td class="section-title" colspan="3">PEKERJAAN ARSITEKTUR</td>
+            </tr>
+
+            <!-- II.1 Pekerjaan Beton Non Struktur -->
+            <tr class="section-header">
+                <td class="bold text-center">II.1</td>
+                <td class="section-title" colspan="3">Pekerjaan Beton Non Struktur</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Ring Balok Praktis 15/20</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">54,000</span>
+                    </div>
+                </td>
+                <td class="text-right">54,00</td>
+            </tr>
+
+            <tr class="empty-row"><td colspan="4"></td></tr>
+
+            <!-- II.1 Pekerjaan Penutup Lantai dan Dinding (INKONSISTENSI KODE) -->
+            <tr class="section-header">
+                <td class="bold text-center inkonsistensi-kode" title="Inkonsistensi: Kode II.1 sudah digunakan untuk 'Pekerjaan Beton Non Struktur'">II.1</td>
+                <td class="section-title inkonsistensi-kode" colspan="3" title="Inkonsistensi: Kode II.1 sudah digunakan untuk 'Pekerjaan Beton Non Struktur'">Pekerjaan Penutup Lantai dan Dinding</td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Pas. Lantai Keramik Polos uk. 30 x 30 cm</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">15,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">0,900</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">15,000</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">0,900</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">13,50</span>
+                    </div>
+                </td>
+                <td class="text-right bold">13,50</td>
+            </tr>
+
+            <tr class="empty-row"><td colspan="4"></td></tr>
+
+            <!-- II.2 Pekerjaan Pasangan Kusen Pintu, Jendela, dan Bouvenlight -->
+            <tr class="section-header">
+                <td class="bold text-center">II.2</td>
+                <td class="section-title" colspan="3">Pekerjaan Pasangan Kusen Pintu, Jendela, dan Bouvenlight</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="sub-item bold">Pekerjaan Pasangan Unit Pintu</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item">Daun Pintu Double / Kuputarang, 5 unit</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">1,950</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">0,670</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">10,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">1,950</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">0,670</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">10,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">13,07</span>
+                    </div>
+                </td>
+                <td class="text-right bold">13,07</td>
+            </tr>
+
+            <tr class="empty-row"><td colspan="4"></td></tr>
+
+            <!-- II.3 Pekerjaan Rangka dan Penutup Plafon -->
+            <tr class="section-header">
+                <td class="bold text-center">II.3</td>
+                <td class="section-title" colspan="3">Pekerjaan Rangka dan Penutup Plafon</td>
+            </tr>
+
+            <!-- Item 1: Rangka Hollow Galvalume -->
+            <tr>
+                <td class="text-center">1</td>
+                <td class="sub-item" colspan="3">Pemasangan 1 m2 Rangka Hollow Galvalume 40.40 mm, Modul 60 x 60 cm, untuk Langit-langit (Plafon)</td>
+            </tr>
+
+            <!-- Plafon R. Kelas -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon R. Kelas</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">7,700</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">8,700</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">5,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">7,700</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">8,700</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">5,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">334,95</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Plafon Gimbal Samping -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon Gimbal Samping</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">14,500</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">0,800</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">2,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">14,500</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">0,800</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">2,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">23,20</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Plafon Teras Depan -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon Teras Depan</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">45,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">2,680</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">1,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">45,000</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">2,680</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">1,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">120,60</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Plafon Teras Belakang -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon Teras Belakang</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">45,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">1,670</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">1,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">45,000</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">1,670</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">1,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">75,15</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Total Item 1 -->
+            <tr>
+                <td></td>
+                <td class="sub-item text-right" style="padding-right: 10px;">Total</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-value">334,950</span>
+                        <span class="calc-operator">+</span>
+                        <span class="calc-value">23,200</span>
+                        <span class="calc-operator">+</span>
+                        <span class="calc-value">120,600</span>
+                        <span class="calc-operator">+</span>
+                        <span class="calc-value">75,150</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">553,90</span>
+                    </div>
+                </td>
+                <td class="text-right bold">553,90</td>
+            </tr>
+
+            <tr class="empty-row"><td colspan="4"></td></tr>
+
+            <!-- Item 2: Papan Gypsum 9mm -->
+            <tr>
+                <td class="text-center">2</td>
+                <td class="sub-item" colspan="3">Pemasangan 1 m2 Langit-langit (Plafon) Papan Gypsum, Tebal 9 mm</td>
+            </tr>
+
+            <!-- Plafon R. Kelas -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon R. Kelas</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">7,800</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">8,800</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">5,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">7,800</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">8,800</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">5,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">343,20</span>
+                    </div>
+                </td>
+                <!-- INKONSISTENSI: Perhitungan menunjukkan 343,20 tetapi Volume menunjukkan 343,200 -->
+                <td class="text-right bold inkonsistensi" title="Inkonsistensi: Perhitungan = 343,20 (343.20) tetapi Volume = 343,200 (343.200). Format tidak konsisten.">343,200</td>
+            </tr>
+
+            <tr class="empty-row"><td colspan="4"></td></tr>
+
+            <!-- Item 3: Pas Penutup Plafon - GRC 4mm -->
+            <tr>
+                <td class="text-center">3</td>
+                <td class="sub-item" colspan="3">Pas Penutup Plafon - GRC 4 mm</td>
+            </tr>
+
+            <!-- Plafon Gimbal Samping -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon Gimbal Samping</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">14,500</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">0,800</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">2,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">14,500</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">0,800</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">2,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">23,20</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Plafon Teras Depan -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">- Plafon Teras Depan</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <span class="calc-label">Panjang</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">45,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Lebar</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">2,680</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="calc-label">Jumlah</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">1,000</span>
+                    </div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">45,000</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">2,680</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">1,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">120,60</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Catatan Inkonsistensi -->
+    <div class="note-box">
+        <h4>⚠ Catatan Inkonsistensi Kode & Perhitungan</h4>
+        <ul>
+            <li>
+                <strong>Inkonsistensi Kode II.1 (Duplikasi):</strong>
+                Kode <span class="highlight">II.1</span> digunakan dua kali:
+                <ul>
+                    <li>II.1 — Pekerjaan Beton Non Struktur</li>
+                    <li>II.1 — Pekerjaan Penutup Lantai dan Dinding <span class="highlight">⚠ (seharusnya II.1 berbeda, misal II.1.a dan II.1.b, atau nomor berbeda)</span></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Inkonsistensi Format Angka Item 2 (Papan Gypsum):</strong>
+                Perhitungan menunjukkan hasil <span class="highlight">343,20</span> (343.20) tetapi kolom Volume menampilkan <span class="highlight">343,200</span> (343.200).
+                Meskipun secara matematis 343.20 = 343.200, format penulisan tidak konsisten dengan item lainnya yang menggunakan 2 desimal (343,20).
+            </li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 11px; color: #666;">
+            <em>Catatan: Dokumen terpotong di bagian Item 3 (GRC 4mm). Total volume untuk Item 3 belum terlihat. Berdasarkan RAB, volume Item II.3.3 (Serat Semen 4mm) = 218,95 M². Perlu verifikasi kelanjutan perhitungan.</em>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rencana Anggaran Biaya - SMAN 1 Cluring</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 13px;
+            padding: 30px 40px;
+            background: #fff;
+            color: #000;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 20px;
+            padding: 8px;
+            border: 1px solid #000;
+        }
+
+        .info-section {
+            border: 1px solid #000;
+            border-top: none;
+            padding: 15px 25px;
+            margin-bottom: 20px;
+        }
+
+        .info-section table {
+            width: 100%;
+            border: none;
+        }
+
+        .info-section td {
+            border: none;
+            padding: 3px 5px;
+            vertical-align: top;
+        }
+
+        .info-label {
+            width: 200px;
+            font-weight: bold;
+        }
+
+        .rab-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        .rab-table th,
+        .rab-table td {
+            border: 1px solid #000;
+            padding: 5px 8px;
+            vertical-align: top;
+        }
+
+        .rab-table thead th {
+            background-color: #c0c0c0;
+            text-align: center;
+            font-weight: bold;
+            padding: 8px 5px;
+        }
+
+        .rab-table thead th.col-no {
+            width: 5%;
+        }
+
+        .rab-table thead th.col-desc {
+            width: 42%;
+        }
+
+        .rab-table thead th.col-vol {
+            width: 8%;
+        }
+
+        .rab-table thead th.col-sat {
+            width: 7%;
+        }
+
+        .rab-table thead th.col-harga {
+            width: 19%;
+        }
+
+        .rab-table thead th.col-jumlah {
+            width: 19%;
+        }
+
+        .rab-table .sub-header th {
+            background-color: #c0c0c0;
+            font-style: italic;
+            font-weight: bold;
+            text-align: center;
+            padding: 4px 5px;
+        }
+
+        .rab-table td.text-right {
+            text-align: right;
+        }
+
+        .rab-table td.text-center {
+            text-align: center;
+        }
+
+        .rab-table td.bold {
+            font-weight: bold;
+        }
+
+        .rab-table td.italic {
+            font-style: italic;
+        }
+
+        .rab-table td.section-title {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .rab-table td.sub-item {
+            padding-left: 20px;
+            font-style: italic;
+        }
+
+        .rab-table td.total-row {
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .rab-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .desc-main {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .desc-sub {
+            font-size: 12px;
+            margin-top: 2px;
+        }
+
+        @media print {
+            body {
+                padding: 10px 20px;
+                font-size: 11px;
+            }
+
+            .rab-table tr:hover {
+                background-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Main Title -->
+    <div class="main-title">RENCANA ANGGARAN BIAYA</div>
+
+    <!-- Info Section -->
+    <div class="info-section">
+        <table>
+            <tr>
+                <td class="info-label">NAMA KEGIATAN</td>
+                <td>: PROGRAM REVITALISASI SMA TAHUN 2026</td>
+            </tr>
+            <tr>
+                <td class="info-label">NAMA SEKOLAH</td>
+                <td>: SMAN 1 CLURING</td>
+            </tr>
+            <tr>
+                <td class="info-label">KABUPATEN/KOTA</td>
+                <td>: BANYUWANGI</td>
+            </tr>
+            <tr>
+                <td class="info-label">TAHUN ANGGARAN</td>
+                <td>: 2026</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- RAB Table -->
+    <table class="rab-table">
+        <thead>
+            <tr>
+                <th class="col-no">NO.</th>
+                <th class="col-desc">JENIS PEKERJAAN</th>
+                <th class="col-vol">VOLUME</th>
+                <th class="col-sat">SATUAN</th>
+                <th class="col-harga">HARGA SATUAN<br>(Rp)</th>
+                <th class="col-jumlah">JUMLAH HARGA<br>(Rp)</th>
+            </tr>
+            <tr class="sub-header">
+                <th>a</th>
+                <th>b</th>
+                <th>d</th>
+                <th>e</th>
+                <th>f</th>
+                <th>g</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Section I: PERSIAPAN -->
+            <tr>
+                <td class="bold text-center">I.</td>
+                <td class="bold">PERSIAPAN</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <!-- 1.1 Pembersihan Area Pekerjaan -->
+            <tr>
+                <td class="bold text-center">1.1</td>
+                <td>
+                    <div class="desc-main">Pembersihan Area Pekerjaan</div>
+                    <div class="desc-sub">Pekerjaan pembersihan sebelum dan sesudah pekerjaan</div>
+                </td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">Ls</td>
+                <td class="text-right">Rp 2.000.000,00</td>
+                <td class="text-right">2.000.000,00</td>
+            </tr>
+
+            <!-- 1.2 Papan Nama Proyek -->
+            <tr>
+                <td class="bold text-center">1.2</td>
+                <td class="desc-main">Papan Nama Proyek</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">Rp 350.000,00</td>
+                <td class="text-right">350.000,00</td>
+            </tr>
+
+            <!-- 1.3 Prasasti Marmer -->
+            <tr>
+                <td class="bold text-center">1.3</td>
+                <td class="desc-main">Prasasti Marmer</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">Rp 2.000.000,00</td>
+                <td class="text-right">2.000.000,00</td>
+            </tr>
+
+            <!-- 1.4 Perlengkapan APD dan peralatan K3 -->
+            <tr>
+                <td class="bold text-center">1.4</td>
+                <td class="desc-main">Perlengkapan APD dan pelalatan K3</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <!-- 1.4.1 Helm Pelindung -->
+            <tr>
+                <td></td>
+                <td class="sub-item">- Helm Pelindung</td>
+                <td class="text-right">15,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">Rp 36.741,00</td>
+                <td class="text-right">551.115,00</td>
+            </tr>
+
+            <!-- 1.4.2 Pelindung Pernafasan dan Mulut (Masker) -->
+            <tr>
+                <td></td>
+                <td class="sub-item">- Pelindung Pernafasan dan Mulut (Masker)</td>
+                <td class="text-right">2,00</td>
+                <td class="text-center">box</td>
+                <td class="text-right">Rp 36.163,80</td>
+                <td class="text-right">72.327,60</td>
+            </tr>
+
+            <!-- 1.4.3 Sarung tangan -->
+            <tr>
+                <td></td>
+                <td class="sub-item">- Sarung tangan</td>
+                <td class="text-right">15,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">Rp 6.597,60</td>
+                <td class="text-right">98.964,00</td>
+            </tr>
+
+            <!-- 1.4.4 Rompi Keselamatan -->
+            <tr>
+                <td></td>
+                <td class="sub-item">- Rompi Keselamatan</td>
+                <td class="text-right">15,00</td>
+                <td class="text-center">bh</td>
+                <td class="text-right">Rp 28.704,60</td>
+                <td class="text-right">430.569,00</td>
+            </tr>
+
+            <!-- 1.5 Pembongkaran rangka atap existing -->
+            <tr>
+                <td class="bold text-center">1.5</td>
+                <td class="desc-main">Pembongkaran rangka atap existing</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">Ls</td>
+                <td class="text-right">Rp 10.000.000,00</td>
+                <td class="text-right">10.000.000,00</td>
+            </tr>
+
+            <!-- 1.6 Pembongkaran / penurunan genteng eksisting -->
+            <tr>
+                <td class="bold text-center">1.6</td>
+                <td class="desc-main">Pembongkaran / penurunan genteng eksisting</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">Ls</td>
+                <td class="text-right">Rp 8.000.000,00</td>
+                <td class="text-right">8.000.000,00</td>
+            </tr>
+
+            <!-- 1.7 Pembongkaran plafond existing -->
+            <tr>
+                <td class="bold text-center">1.7</td>
+                <td class="desc-main">Pembongkaran plafond existing</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">Ls</td>
+                <td class="text-right">Rp 3.000.000,00</td>
+                <td class="text-right">3.000.000,00</td>
+            </tr>
+
+            <!-- 1.8 Pengangkutan hasil bongkaran keluar lokasi pekerjaan -->
+            <tr>
+                <td class="bold text-center">1.8</td>
+                <td class="desc-main">Pengangkutan hasil bongkaran keluar lokasi pekerjaan</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">Ls</td>
+                <td class="text-right">Rp 3.000.000,00</td>
+                <td class="text-right">3.000.000,00</td>
+            </tr>
+
+            <!-- 1.9 Mobilisasi Peralatan dan Bahan -->
+            <tr>
+                <td class="bold text-center">1.9</td>
+                <td class="desc-main">Mobilisasi Peralatan dan Bahan</td>
+                <td class="text-right">1,00</td>
+                <td class="text-center">Ls</td>
+                <td class="text-right">Rp 1.000.000,00</td>
+                <td class="text-right">1.000.000,00</td>
+            </tr>
+
+            <!-- Total Row -->
+            <tr>
+                <td colspan="5" class="total-row">Jumlah Pekerjaan Persiapan</td>
+                <td class="total-row">30.502.975,60</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
