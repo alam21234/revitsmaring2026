@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Volume Pekerjaan Arsitektur (Lanjutan 4) - SMAN 1 Cluring</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11px;
+            padding: 20px 30px;
+            background: #fff;
+            color: #000;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        .main-title {
+            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .sub-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .info-section { margin-bottom: 15px; }
+        .info-section table { width: 100%; border: none; }
+        .info-section td { border: none; padding: 2px 5px; vertical-align: top; }
+        .info-label { width: 180px; font-weight: bold; }
+
+        .rab-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 2px solid #000;
+        }
+
+        .rab-table th, .rab-table td {
+            border: 1px solid #000;
+            padding: 3px 5px;
+            vertical-align: middle;
+        }
+
+        .rab-table thead th {
+            background-color: #d0d8f0;
+            text-align: center;
+            font-weight: bold;
+            padding: 6px 5px;
+            font-size: 12px;
+        }
+
+        .rab-table thead th.col-no { width: 5%; }
+        .rab-table thead th.col-desc { width: 30%; }
+        .rab-table thead th.col-calc { width: 50%; }
+        .rab-table thead th.col-vol { width: 15%; }
+
+        .rab-table td.text-right { text-align: right; }
+        .rab-table td.text-center { text-align: center; }
+        .rab-table td.bold { font-weight: bold; }
+
+        .rab-table td.section-title {
+            font-weight: bold;
+            background-color: #f0f0f0;
+        }
+
+        .rab-table td.sub-item { padding-left: 10px; }
+        .rab-table td.sub-sub-item { padding-left: 25px; font-style: italic; }
+
+        .calc-cell { text-align: center; }
+
+        .calc-cell .calc-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 2px 0;
+        }
+
+        .calc-cell .calc-label { width: 100px; text-align: left; }
+        .calc-cell .calc-equals { width: 20px; text-align: center; }
+        .calc-cell .calc-value { width: 80px; text-align: right; }
+        .calc-cell .calc-operator { width: 20px; text-align: center; }
+
+        .inkonsistensi {
+            color: #cc0000 !important;
+            font-weight: bold;
+            background-color: #fff0f0 !important;
+            border: 1px dashed #cc0000;
+        }
+
+        .note-box {
+            margin-top: 15px;
+            padding: 12px 15px;
+            border: 2px solid #cc0000;
+            border-radius: 5px;
+            background-color: #fff5f5;
+            font-size: 12px;
+        }
+
+        .note-box h4 { color: #cc0000; margin-bottom: 8px; }
+        .note-box ul { margin-left: 20px; }
+        .note-box li { margin-bottom: 5px; }
+        .note-box .highlight { color: #cc0000; font-weight: bold; }
+
+        .empty-row td { height: 15px; }
+
+        .summary-box {
+            margin-top: 15px;
+            padding: 12px 15px;
+            border: 2px solid #27ae60;
+            border-radius: 5px;
+            background-color: #f0fff0;
+            font-size: 12px;
+        }
+
+        .summary-box h4 { color: #27ae60; margin-bottom: 8px; }
+        .summary-box table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        .summary-box th, .summary-box td { border: 1px solid #27ae60; padding: 5px 8px; }
+        .summary-box th { background-color: #d5f5e3; }
+
+        @media print {
+            body { padding: 10px 15px; font-size: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="main-title">BACKUP VOLUME</div>
+    <div class="sub-title">PEKERJAAN ARSITEKTUR<br>SMAN 1 CLURING</div>
+
+    <div class="info-section">
+        <table>
+            <tr><td class="info-label">NAMA KEGIATAN</td><td>: PROGRAM REVITALISASI SMA TAHUN 2026</td></tr>
+            <tr><td class="info-label">NAMA SEKOLAH</td><td>: SMAN 1 CLURING</td></tr>
+            <tr><td class="info-label">KABUPATEN/KOTA</td><td>: BANYUWANGI</td></tr>
+            <tr><td class="info-label">TAHUN ANGGARAN</td><td>: 2026</td></tr>
+        </table>
+    </div>
+
+    <table class="rab-table">
+        <thead>
+            <tr>
+                <th class="col-no">NO.</th>
+                <th class="col-desc">PEKERJAAN</th>
+                <th class="col-calc">PERHITUNGAN</th>
+                <th class="col-vol">VOLUME</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Lanjutan Item 4: Pengecatan Kayu - Cat Konsol 8/12 -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">Cat Konsol 8/12</td>
+                <td class="calc-cell">
+                    <div class="calc-row"><span class="calc-label">Panjang</span><span class="calc-equals">=</span><span class="calc-value">3,250</span></div>
+                    <div class="calc-row"><span class="calc-label">Lebar</span><span class="calc-equals">=</span><span class="calc-value">0,320</span></div>
+                    <div class="calc-row"><span class="calc-label">Jumlah</span><span class="calc-equals">=</span><span class="calc-value">20,000</span></div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">3,250</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">0,320</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">20,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">20,80</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Cat Konsol 6/12 -->
+            <tr>
+                <td></td>
+                <td class="sub-sub-item">Cat Konsol 6/12</td>
+                <td class="calc-cell">
+                    <div class="calc-row"><span class="calc-label">Panjang</span><span class="calc-equals">=</span><span class="calc-value">3,400</span></div>
+                    <div class="calc-row"><span class="calc-label">Lebar</span><span class="calc-equals">=</span><span class="calc-value">0,300</span></div>
+                    <div class="calc-row"><span class="calc-label">Jumlah</span><span class="calc-equals">=</span><span class="calc-value">20,000</span></div>
+                    <div class="calc-row" style="margin-top: 5px; border-top: 1px solid #ccc; padding-top: 5px;">
+                        <span class="calc-value">3,400</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">0,300</span>
+                        <span class="calc-operator">x</span>
+                        <span class="calc-value">20,000</span>
+                        <span class="calc-equals">=</span>
+                        <span class="calc-value">20,40</span>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+
+            <!-- Total Pengecatan Kayu -->
+            <tr>
+                <td></td>
+                <td class="sub-item text-right bold" style="padding-right: 10px;">Total</td>
+                <td class="calc-cell">
+                    <div class="calc-row">
+                        <!-- INKONSISTENSI: Tidak ada breakdown perhitungan total -->
+                        <span class="calc-value inkonsistensi" title="INKONSISTENSI: Tidak ada breakdown penjumlahan. Seharusnya: 10,24 + 63,36 + 12,74 + 2,62 + 13,73 + 20,80 + 20,40 = 143,89" style="width: auto;">=</span>
+                        <span class="calc-value">143,89</span>
+                    </div>
+                </td>
+                <td class="text-right bold">143,89</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Ringkasan Perhitungan Total Pengecatan Kayu -->
+    <div class="summary-box">
+        <h4>✅ Verifikasi Total Pengecatan Kayu (Item 4)</h4>
+        <p style="margin-bottom: 10px;">Berikut adalah breakdown lengkap perhitungan Total = <strong>143,89 M²</strong>:</p>
+        <table>
+            <tr>
+                <th>No.</th>
+                <th>Uraian</th>
+                <th>Perhitungan</th>
+                <th>Volume (M²)</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>P1 (Kusen Pintu)</td>
+                <td>8,530 × 0,240 × 5,000</td>
+                <td class="text-right">10,24</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>J1 (Kusen Jendela Besar)</td>
+                <td>70,400 × 0,180 × 5,000</td>
+                <td class="text-right">63,36</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>J2 (Kusen Jendela Kecil)</td>
+                <td>10,620 × 0,240 × 5,000</td>
+                <td class="text-right">12,74</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Daun Jendela J1</td>
+                <td>10,480 × 0,050 × 5,000</td>
+                <td class="text-right">2,62</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>List Plafon</td>
+                <td>274,500 × 0,050 × 1,000</td>
+                <td class="text-right">13,73</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Cat Konsol 8/12</td>
+                <td>3,250 × 0,320 × 20,000</td>
+                <td class="text-right">20,80</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Cat Konsol 6/12</td>
+                <td>3,400 × 0,300 × 20,000</td>
+                <td class="text-right">20,40</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+            <tr style="background-color: #d5f5e3; font-weight: bold;">
+                <td colspan="3" class="text-right">TOTAL PENGECATAN KAYU</td>
+                <td class="text-right">143,89</td>
+                <td style="color: #27ae60; text-align: center;">✅</td>
+            </tr>
+        </table>
+        <p style="margin-top: 10px; font-size: 11px;">
+            <strong>Verifikasi:</strong> 10,24 + 63,36 + 12,74 + 2,62 + 13,73 + 20,80 + 20,40 = <strong>143,89 M²</strong> ✓
+            <br><em>Nilai ini konsisten dengan RAB Section II.5 Item 4 (Pengecatan Kayu = 143,89 M²)</em>
+        </p>
+    </div>
+
+    <!-- Catatan Inkonsistensi -->
+    <div class="note-box">
+        <h4>⚠ Catatan Inkonsistensi yang Ditemukan</h4>
+        <ul>
+            <li>
+                <strong>Total Row Tidak Memiliki Breakdown Perhitungan:</strong>
+                <br>Pada baris "Total = 143,89", tidak ditampilkan penjumlahan lengkap dari semua sub-item Pengecatan Kayu.
+                <br><strong>Seharusnya:</strong> 10,24 + 63,36 + 12,74 + 2,62 + 13,73 + 20,80 + 20,40 = <strong>143,89</strong>
+                <br><em>Meskipun nilai total benar, tidak adanya breakdown membuat verifikasi manual lebih sulit.</em>
+            </li>
+            <li>
+                <strong>Jumlah Konsol = 20,000 (20 unit):</strong>
+                <br>Jumlah konsol (20 unit) jauh lebih banyak dibandingkan item lain (5 unit). Ini perlu diverifikasi apakah benar ada 20 konsol atau apakah ini typo dari 2,000 (2 unit).
+                <br><em>Namun secara matematis: 3,250 × 0,320 × 20 = 20,80 ✓ (benar)</em>
+            </li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 11px; color: #666;">
+            <em><strong>Kesimpulan:</strong> Dokumen ini merupakan halaman terakhir dari Backup Volume Pekerjaan Arsitektur. Total Pengecatan Kayu (143,89 M²) telah terverifikasi konsisten dengan RAB utama. Tidak ada inkonsistensi nilai rupiah yang signifikan.</em>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
